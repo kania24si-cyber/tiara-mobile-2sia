@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="gradient_top">#2A1B9A</color>
+    <color name="gradient_bottom">#5F2EEA</color>
+    <color name="pink">#D946EF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#CFCFCF</color>
+    <color name="ungu_terang">#E040FB</color>
+    <color name="transparent_white">#33FFFFFF</color>
 </resources>
