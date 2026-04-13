@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiara_distinctive.databinding.ActivityLoginBinding
+import com.example.tiara_distinctive.pertemuan_2_laporan.HitungActivity
+import com.example.tiara_distinctive.pertemuan_4_laporan.Custom1Activity
+import com.example.tiara_distinctive.pertemuan_4_laporan.Custom2Activity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,5 +32,6 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        }
     }
-}

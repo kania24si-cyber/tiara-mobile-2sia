@@ -17,6 +17,10 @@ class HitungActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_hitung)
+        val judul = intent.getStringExtra("judul")
+        val deskripsi = intent.getStringExtra("deskripsi")
+
+        findViewById<TextView>(R.id.judul).text = judul
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,7 +33,7 @@ class HitungActivity : AppCompatActivity() {
         val sisi = findViewById<EditText>(R.id.editTextNumberDecimal3)
         val tombol = findViewById<Button>(R.id.button2)
         val hasil = findViewById<TextView>(R.id.textView)
-
+        findViewById<TextView>(R.id.deskripsi).text = deskripsi
         tombol.setOnClickListener {
 
             Log.e("HitungActivity", "Tombol Hitung ditekan")

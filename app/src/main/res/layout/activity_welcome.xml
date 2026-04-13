@@ -44,4 +44,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <Button
+        android:id="@+id/btnRumus"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="Rumus Bangun Ruang"
+        android:backgroundTint="@color/ungu_terang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textUsername" />
+
+    <Button
+        android:id="@+id/btnCustom1"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="Custom 1"
+        android:backgroundTint="@color/ungu_terang"
+        app:layout_constraintTop_toBottomOf="@id/btnRumus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnCustom2"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="Custom 2"
+        android:backgroundTint="@color/ungu_terang"
+        app:layout_constraintTop_toBottomOf="@id/btnCustom1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="Logout"
+        android:backgroundTint="@color/ungu_terang"
+        app:layout_constraintTop_toBottomOf="@id/btnCustom2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

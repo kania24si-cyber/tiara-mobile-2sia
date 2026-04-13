@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiaradistinctive">
         <activity
+            android:name=".pertemuan_4_laporan.Custom2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4_laporan.Custom1Activity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_3_laporan.WelcomeActivity"
             android:exported="false" />
         <activity
@@ -25,7 +31,7 @@
         </activity>
         <activity
             android:name=".pertemuan_2_laporan.HitungActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
