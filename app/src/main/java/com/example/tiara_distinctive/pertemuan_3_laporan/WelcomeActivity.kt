@@ -23,22 +23,22 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.btnRumus.setOnClickListener {
             val intent = Intent(this, HitungActivity::class.java)
-            intent.putExtra("judul", "Dashboard")
-            intent.putExtra("deskripsi", "Halaman utama aplikasi")
+            intent.putExtra("judul", "Menghitung Luas Segitiga dan Volume Kubus")
+            intent.putExtra("deskripsi", "Halaman Hitung Rumus Bangun Ruang")
             startActivity(intent)
         }
 
         binding.btnCustom1.setOnClickListener {
             val intent = Intent(this, Custom1Activity::class.java)
-            intent.putExtra("judul", "Dashboard")
-            intent.putExtra("deskripsi", "Halaman utama aplikasi")
+            intent.putExtra("judul", "Custom 1")
+            intent.putExtra("deskripsi", "Halaman Custom 1 berisi\n" + "gambar dan text")
             startActivity(intent)
         }
 
         binding.btnCustom2.setOnClickListener {
             val intent = Intent(this, Custom2Activity::class.java)
-            intent.putExtra("judul", "Dashboard")
-            intent.putExtra("deskripsi", "Halaman utama aplikasi")
+            intent.putExtra("judul", "Custom 2")
+            intent.putExtra("deskripsi", "Halaman Custom 2 berisi\n" + "gambar dan text")
             startActivity(intent)
         }
 
