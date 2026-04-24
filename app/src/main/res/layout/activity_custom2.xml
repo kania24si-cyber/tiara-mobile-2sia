@@ -5,79 +5,92 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient">
+    android:background="@color/hijau_muda">
 
+    <!-- APP BAR -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        android:background="@color/hijau_primary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
 
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextColor="@android:color/white"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            android:background="@color/hijau_primary"
+            app:titleTextColor="@color/putih_soft"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- JUDUL -->
-    <TextView
-        android:id="@+id/tvJudul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- DESKRIPSI -->
-    <TextView
-        android:id="@+id/tvDeskripsi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvJudul"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- CARD -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <!-- ISI HALAMAN -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        android:backgroundTint="@color/ungu_terang"
-        app:layout_constraintTop_toBottomOf="@id/tvDeskripsi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="90dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <!-- JUDUL -->
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hijau_text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- DESKRIPSI -->
+        <TextView
+            android:id="@+id/tvDeskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/hijau_dark"
+            android:textSize="16sp" />
+
+        <!-- CARD -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/hijau_primary"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Isi card adalah logo"
-                android:textColor="@color/white"/>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="130dp"
-                app:srcCompat="@drawable/logoapptiara" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isi card adalah logo"
+                    android:textColor="@color/putih_soft"
+                    android:textSize="16sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="14dp"
+                    app:srcCompat="@drawable/logoapptiara" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

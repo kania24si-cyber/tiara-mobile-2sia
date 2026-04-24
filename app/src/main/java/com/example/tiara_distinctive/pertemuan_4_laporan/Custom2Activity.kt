@@ -1,5 +1,6 @@
 package com.example.tiara_distinctive.pertemuan_4_laporan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tiara_distinctive.R
+import com.example.tiara_distinctive.pertemuan_3_laporan.WelcomeActivity
 
 class Custom2Activity : AppCompatActivity() {
 
@@ -29,6 +31,7 @@ class Custom2Activity : AppCompatActivity() {
         }
 
         // Tambahan toolbar
+        // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
 
         setSupportActionBar(toolbar)
@@ -37,11 +40,12 @@ class Custom2Activity : AppCompatActivity() {
             title = "Custom 2"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 
+    // Tombol panah kiri kembali ke WelcomeActivity
     override fun onSupportNavigateUp(): Boolean {
+        startActivity(Intent(this, WelcomeActivity::class.java))
         finish()
         return true
     }

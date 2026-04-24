@@ -1,5 +1,6 @@
 package com.example.tiara_distinctive.pertemuan_4_laporan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tiara_distinctive.R
+import com.example.tiara_distinctive.pertemuan_3_laporan.LoginActivity
+import com.example.tiara_distinctive.pertemuan_3_laporan.WelcomeActivity
 
 class Custom1Activity : AppCompatActivity() {
 
@@ -37,11 +40,12 @@ class Custom1Activity : AppCompatActivity() {
             title = "Custom 1"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 
+    // Tombol panah kiri toolbar
     override fun onSupportNavigateUp(): Boolean {
+        startActivity(Intent(this, WelcomeActivity::class.java))
         finish()
         return true
     }

@@ -73,7 +73,6 @@ class HitungActivity : AppCompatActivity() {
             title = "Hitung Rumus"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 

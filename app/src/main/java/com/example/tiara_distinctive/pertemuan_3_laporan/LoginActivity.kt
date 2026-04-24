@@ -3,11 +3,9 @@ package com.example.tiara_distinctive.pertemuan_3_laporan
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tiara_distinctive.MainActivity
 import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.databinding.ActivityLoginBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -26,46 +24,51 @@ class LoginActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
-
         }
+
         val sharedPref = getSharedPreferences("session_user", MODE_PRIVATE)
+
         binding.btnLogin.setOnClickListener {
 
-            val username = binding.inputUsername.text.toString()
-            val password = binding.inputPassword.text.toString()
+            val username = binding.inputUsername.text.toString().trim()
+            val password = binding.inputPassword.text.toString().trim()
 
-            if (username == password) {
+            if (username == password && username.isNotEmpty()) {
+
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
                 editor.apply()
 
-                val intent = Intent(this, MainActivity::class.java)
+                // ✅ PERBAIKAN: arahkan ke Welcome seperti JamesApps ke Main
+                val intent = Intent(this, WelcomeActivity::class.java)
+
+                // ✅ PERBAIKAN: kirim username
+                intent.putExtra("USERNAME", username)
+
                 startActivity(intent)
                 finish()
 
             } else {
+
                 MaterialAlertDialogBuilder(this)
-                    .setTitle("Konfirmasi")
-                    .setMessage("Apakah Anda yakin ingin melanjutkan?")
-                    .setNegativeButton("Batal") { dialog, _ ->
+                    .setTitle("Login Gagal")
+                    .setMessage("Username dan Password harus sama")
+                    .setPositiveButton("OK") { dialog, _ ->
                         dialog.dismiss()
                     }
                     .show()
             }
         }
-
     }
-
 
     override fun onStart() {
         super.onStart()
-        Log.e("onStart", "onStart: FourthActivity terlihat di layar")
+        Log.e("onStart", "LoginActivity terlihat di layar")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("onDestroy", "FourthActivity dihapus dari stack")
+        Log.e("onDestroy", "LoginActivity dihapus dari stack")
     }
 }

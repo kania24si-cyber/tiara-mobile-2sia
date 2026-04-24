@@ -6,29 +6,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/hijau_muda"
     tools:context=".pertemuan_6_laporan.WebViewActivity">
 
-    <!-- ✅ APP BAR (cukup satu saja) -->
+    <!-- APP BAR -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/hijau_primary"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextColor="@android:color/white"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            android:background="@color/hijau_primary"
+            app:titleTextColor="@color/putih_soft"
+            app:subtitleTextColor="@color/putih_soft"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- ✅ WebView -->
+    <!-- WEBVIEW -->
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/putih_soft"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
