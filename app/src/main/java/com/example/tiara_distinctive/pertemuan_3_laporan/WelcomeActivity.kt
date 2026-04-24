@@ -3,10 +3,12 @@ package com.example.tiara_distinctive.pertemuan_3_laporan
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.databinding.ActivityWelcomeBinding
 import com.example.tiara_distinctive.pertemuan_2_laporan.HitungActivity
 import com.example.tiara_distinctive.pertemuan_4_laporan.Custom1Activity
 import com.example.tiara_distinctive.pertemuan_4_laporan.Custom2Activity
+import com.example.tiara_distinctive.pertemuan_6_laporan.WebViewActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -57,5 +59,35 @@ class WelcomeActivity : AppCompatActivity() {
                 }
                 .show()
         }
+        binding.btnBinaDesa.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            intent.putExtra("judul", "Menghitung Luas Segitiga dan Volume Kubus")
+            intent.putExtra("deskripsi", "Halaman Hitung Rumus Bangun Ruang")
+            startActivity(intent)
+        }
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fifth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+
+        binding.appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+
+            if (verticalOffset == 0) {
+                binding.appBar.elevation = 0f
+            } else {
+                binding.appBar.elevation = 80f
+            }
+
+            if (kotlin.math.abs(verticalOffset) == appBarLayout.totalScrollRange) {
+                supportActionBar?.subtitle = null
+            } else {
+                supportActionBar?.subtitle = "Ini adalah subtitle"
+            }
+        }
+
     }
 }

@@ -6,4 +6,7 @@
     <color name="gray">#CFCFCF</color>
     <color name="ungu_terang">#E040FB</color>
     <color name="transparent_white">#33FFFFFF</color>
+    <color name="hijau_primary">#74BE63</color>
+    <color name="hijau_dark">#5AA84A</color>
+    <color name="hijau_muda">#DCE8D8</color>
 </resources>

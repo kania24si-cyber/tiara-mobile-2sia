@@ -8,19 +8,23 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tiara_distinctive.R
 
 class HitungActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_hitung)
+
         val judul = intent.getStringExtra("judul")
         val deskripsi = intent.getStringExtra("deskripsi")
 
         findViewById<TextView>(R.id.judul).text = judul
+        findViewById<TextView>(R.id.deskripsi).text = deskripsi
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -33,7 +37,7 @@ class HitungActivity : AppCompatActivity() {
         val sisi = findViewById<EditText>(R.id.editTextNumberDecimal3)
         val tombol = findViewById<Button>(R.id.button2)
         val hasil = findViewById<TextView>(R.id.textView)
-        findViewById<TextView>(R.id.deskripsi).text = deskripsi
+
         tombol.setOnClickListener {
 
             Log.e("HitungActivity", "Tombol Hitung ditekan")
@@ -59,5 +63,22 @@ class HitungActivity : AppCompatActivity() {
                 Toast.makeText(this, "Isi semua input!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // GANTI BAGIAN TOOLBAR SAJA
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.apply {
+            title = "Hitung Rumus"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
