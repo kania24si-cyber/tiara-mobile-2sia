@@ -24,7 +24,7 @@ class WebViewActivity : AppCompatActivity() {
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 🔹 Toolbar
+//   Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Bina Desa"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -40,10 +40,9 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
-                // ✅ PERBAIKAN: arahkan ke Welcome seperti JamesApps ke Main
+
                 val intent = Intent(this, WelcomeActivity::class.java)
 
-                // ✅ PERBAIKAN: kirim username
                 intent.putExtra("USERNAME", username)
 
                 startActivity(intent)

@@ -6,15 +6,13 @@
     <color name="gray">#CFCFCF</color>
     <color name="ungu_terang">#E040FB</color>
     <color name="transparent_white">#33FFFFFF</color>
-    <!-- WARNA SESUAI GAMBAR -->
 
-    <color name="hijau_primary">#74BE63</color>   <!-- HEADER HIJAU -->
-    <color name="hijau_dark">#5AA84A</color>      <!-- HIJAU LEBIH TUA -->
-    <color name="hijau_muda">#DCE8D8</color>      <!-- BACKGROUND ABU HIJAU -->
+    <color name="hijau_primary">#74BE63</color>
+    <color name="hijau_dark">#5AA84A</color>
+    <color name="hijau_muda">#DCE8D8</color>
 
-    <!-- TAMBAHAN AGAR MIRIP BANGET -->
 
-    <color name="hijau_text">#6FB95D</color>      <!-- TEXT ABOUT -->
-    <color name="putih_soft">#F4F7F2</color>      <!-- TEXT DESASFACE -->
+    <color name="hijau_text">#6FB95D</color>
+    <color name="putih_soft">#F4F7F2</color>
 
 </resources>

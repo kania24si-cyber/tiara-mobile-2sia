@@ -27,7 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
 
-            // ✅ splash 2 detik
+
             delay(2000)
 
             val sharedPref =
@@ -36,7 +36,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val isLogin =
                 sharedPref.getBoolean("isLogin", false)
 
-            // ✅ alur sama seperti JamesApps
+
             if (isLogin) {
 
                 val username =
@@ -47,7 +47,6 @@ class SplashScreenActivity : AppCompatActivity() {
                     WelcomeActivity::class.java
                 )
 
-                // ✅ kirim username
                 intent.putExtra("USERNAME", username)
 
                 startActivity(intent)

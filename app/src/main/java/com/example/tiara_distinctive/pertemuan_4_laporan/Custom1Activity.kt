@@ -43,7 +43,6 @@ class Custom1Activity : AppCompatActivity() {
         }
     }
 
-    // Tombol panah kiri toolbar
     override fun onSupportNavigateUp(): Boolean {
         startActivity(Intent(this, WelcomeActivity::class.java))
         finish()
