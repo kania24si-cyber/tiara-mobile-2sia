@@ -2,48 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hijau_muda">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+    <!-- TOOLBAR SAJA -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/hijau_primary"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-
+        app:titleTextColor="@color/putih_soft"
+        app:subtitleTextColor="@color/putih_soft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/hijau_primary"
-            app:titleTextColor="@color/putih_soft"
-            app:iconPadding="8dp"/>
-    </com.google.android.material.appbar.AppBarLayout>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="241dp"
         android:layout_height="292dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/logoapptiara"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/merriweather_24pt_extrabolditalic"
         android:text="Selamat Datang"
         android:textColor="@color/hijau_dark"
         android:textSize="26sp"
@@ -57,7 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/merriweather_24pt_extrabolditalic"
         android:text="user"
         android:textColor="@color/hijau_text"
         android:textSize="18sp"
@@ -69,6 +58,7 @@
         android:id="@+id/btnRumus"
         android:layout_width="310dp"
         android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:text="Rumus Bangun Ruang"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_primary"
@@ -80,6 +70,7 @@
         android:id="@+id/btnCustom1"
         android:layout_width="310dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:text="Custom 1"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_primary"
@@ -91,6 +82,7 @@
         android:id="@+id/btnCustom2"
         android:layout_width="310dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:text="Custom 2"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_primary"
@@ -102,17 +94,19 @@
         android:id="@+id/btnLogout"
         android:layout_width="310dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:text="Logout"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_dark"
         app:layout_constraintTop_toBottomOf="@id/btnCustom2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/btnBinaDesa"
         android:layout_width="310dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:text="Web Bina Desa"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_primary"

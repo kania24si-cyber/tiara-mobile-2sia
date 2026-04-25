@@ -1,32 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/hijau_muda">
 
-    <!-- APP BAR -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <!-- TOOLBAR SAJA -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/hijau_primary"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/hijau_primary"
-            app:titleTextColor="@color/putih_soft"
-            app:layout_scrollFlags="scroll|enterAlways" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        app:titleTextColor="@color/putih_soft" />
 
     <!-- ISI HALAMAN -->
     <LinearLayout
@@ -34,15 +22,14 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingTop="90dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:gravity="center_horizontal">
 
         <!-- JUDUL -->
         <TextView
             android:id="@+id/tvJudul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:textColor="@color/hijau_text"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -93,4 +80,4 @@
 
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

@@ -7,24 +7,16 @@
     android:layout_height="match_parent"
     android:background="@color/hijau_muda">
 
-
-<!-- APP BAR -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+    <!-- TOOLBAR SAJA -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/hijau_primary"
+        app:titleTextColor="@color/putih_soft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/hijau_primary"
-            app:titleTextColor="@color/putih_soft"/>
-    </com.google.android.material.appbar.AppBarLayout>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- JUDUL -->
     <TextView
@@ -35,7 +27,7 @@
         android:textColor="@color/hijau_text"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

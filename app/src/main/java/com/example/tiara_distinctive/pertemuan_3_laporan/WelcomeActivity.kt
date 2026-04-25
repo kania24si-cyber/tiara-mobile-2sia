@@ -3,7 +3,6 @@ package com.example.tiara_distinctive.pertemuan_3_laporan
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.databinding.ActivityWelcomeBinding
 import com.example.tiara_distinctive.pertemuan_2_laporan.HitungActivity
 import com.example.tiara_distinctive.pertemuan_4_laporan.Custom1Activity
@@ -20,64 +19,17 @@ class WelcomeActivity : AppCompatActivity() {
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ PERBAIKAN: ambil username dari intent / session
-        val sharedPref = getSharedPreferences("session_user", MODE_PRIVATE)
+        val sharedPref =
+            getSharedPreferences("session_user", MODE_PRIVATE)
 
         val username =
             intent.getStringExtra("USERNAME")
                 ?: sharedPref.getString("username", "User")
 
-        binding.textUsername.text = "Halo, $username 👋"
+        binding.textUsername.text =
+            "Halo, $username 👋"
 
-        binding.btnRumus.setOnClickListener {
-            val intent = Intent(this, HitungActivity::class.java)
-            intent.putExtra("judul", "Menghitung Luas Segitiga dan Volume Kubus")
-            intent.putExtra("deskripsi", "Halaman Hitung Rumus Bangun Ruang")
-            startActivity(intent)
-        }
-
-        binding.btnCustom1.setOnClickListener {
-            val intent = Intent(this, Custom1Activity::class.java)
-            intent.putExtra("judul", "Custom 1")
-            intent.putExtra("deskripsi", "Halaman Custom 1 berisi gambar dan text")
-            startActivity(intent)
-        }
-
-        binding.btnCustom2.setOnClickListener {
-            val intent = Intent(this, Custom2Activity::class.java)
-            intent.putExtra("judul", "Custom 2")
-            intent.putExtra("deskripsi", "Halaman Custom 2 berisi gambar dan text")
-            startActivity(intent)
-        }
-
-        binding.btnBinaDesa.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java))
-        }
-
-        binding.btnLogout.setOnClickListener {
-            androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Yakin ingin logout?")
-                .setPositiveButton("Ya") { _, _ ->
-
-                    // ✅ PERBAIKAN: hapus session login
-                    sharedPref.edit().clear().apply()
-
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    finish()
-                }
-                .setNegativeButton("Tidak") { _, _ ->
-                    com.google.android.material.snackbar.Snackbar
-                        .make(
-                            binding.root,
-                            "Logout dibatalkan",
-                            com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
-                        )
-                        .show()
-                }
-                .show()
-        }
-
+        // ✅ PAKAI TOOLBAR SAJA
         setSupportActionBar(binding.toolbar)
 
         supportActionBar?.apply {
@@ -87,30 +39,100 @@ class WelcomeActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        binding.appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+        // ==========================
+        // BUTTON MENU
+        // ==========================
 
-            if (verticalOffset == 0) {
-                binding.appBar.elevation = 0f
-            } else {
-                binding.appBar.elevation = 80f
-            }
+        binding.btnRumus.setOnClickListener {
+            val intent =
+                Intent(this, HitungActivity::class.java)
 
-            if (kotlin.math.abs(verticalOffset) ==
-                appBarLayout.totalScrollRange
-            ) {
-                supportActionBar?.subtitle = null
-            } else {
-                supportActionBar?.subtitle = "Halaman Utama"
-            }
+            intent.putExtra(
+                "judul",
+                "Menghitung Luas Segitiga dan Volume Kubus"
+            )
+
+            intent.putExtra(
+                "deskripsi",
+                "Halaman Hitung Rumus Bangun Ruang"
+            )
+
+            startActivity(intent)
+        }
+
+        binding.btnCustom1.setOnClickListener {
+            val intent =
+                Intent(this, Custom1Activity::class.java)
+
+            intent.putExtra("judul", "Custom 1")
+            intent.putExtra(
+                "deskripsi",
+                "Halaman Custom 1 berisi gambar dan text"
+            )
+
+            startActivity(intent)
+        }
+
+        binding.btnCustom2.setOnClickListener {
+            val intent =
+                Intent(this, Custom2Activity::class.java)
+
+            intent.putExtra("judul", "Custom 2")
+            intent.putExtra(
+                "deskripsi",
+                "Halaman Custom 2 berisi gambar dan text"
+            )
+
+            startActivity(intent)
+        }
+
+        binding.btnBinaDesa.setOnClickListener {
+            startActivity(
+                Intent(this, WebViewActivity::class.java)
+            )
+        }
+
+        binding.btnLogout.setOnClickListener {
+
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Yakin ingin logout?")
+                .setPositiveButton("Ya") { _, _ ->
+
+                    sharedPref.edit().clear().apply()
+
+                    startActivity(
+                        Intent(
+                            this,
+                            LoginActivity::class.java
+                        )
+                    )
+
+                    finish()
+                }
+
+                .setNegativeButton("Tidak") { _, _ ->
+
+                    com.google.android.material.snackbar.Snackbar
+                        .make(
+                            binding.root,
+                            "Logout dibatalkan",
+                            com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
+                        )
+                        .show()
+                }
+
+                .show()
         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
 
-        // ✅ tombol back seperti JamesApps
-        startActivity(Intent(this, LoginActivity::class.java))
-        finish()
+        startActivity(
+            Intent(this, LoginActivity::class.java)
+        )
 
+        finish()
         return true
     }
 }
