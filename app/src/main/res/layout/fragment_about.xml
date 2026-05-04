@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau_muda">
+
+    <!-- SEMUA ISI DALAM 1 LINEAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hijau_primary"
+            android:title="About DesaSface"
+            android:titleTextColor="@color/putih_soft" />
+
+        <!-- CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/putih_soft"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- JUDUL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DesaSface"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_primary"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- DEFINISI -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tentang Desa"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_text"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DesaSface merupakan singkatan dari 'Desa Space and Facility', yaitu sistem digital yang digunakan untuk mengelola fasilitas desa dan peminjaman ruang secara online. Aplikasi ini membantu masyarakat dalam mengakses informasi fasilitas, melakukan peminjaman, pembayaran, serta mendapatkan resi secara transparan dan efisien."
+                android:textColor="@color/hijau_dark"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- FITUR -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fitur Utama"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_text"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Melihat informasi fasilitas desa (aula, lapangan, dll)\n• Melihat syarat dan dokumen peminjaman\n• Mengajukan peminjaman fasilitas\n• Menentukan tanggal dan tujuan peminjaman\n• Status peminjaman (Pending, Disetujui, Lunas, Ditolak)\n• Upload bukti pembayaran\n• Verifikasi pembayaran oleh admin\n• Download resi peminjaman\n• Informasi petugas desa"
+                android:textColor="@color/hijau_dark"
+                android:textSize="14sp"
+                android:lineSpacingExtra="6dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- TUJUAN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tujuan"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_text"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sistem ini bertujuan untuk mempermudah masyarakat dalam meminjam fasilitas desa secara online tanpa proses manual yang rumit. Selain itu, sistem ini meningkatkan transparansi, mempermudah pengelolaan oleh admin, serta memastikan fasilitas desa dapat digunakan secara adil, terorganisir, dan efisien oleh seluruh warga."
+                android:textColor="@color/hijau_dark"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

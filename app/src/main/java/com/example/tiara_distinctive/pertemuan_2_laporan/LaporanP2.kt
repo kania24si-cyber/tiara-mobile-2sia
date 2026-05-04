@@ -1,2 +1,0 @@
-package com.example.tiara_distinctive.pertemuan_2_laporan
-

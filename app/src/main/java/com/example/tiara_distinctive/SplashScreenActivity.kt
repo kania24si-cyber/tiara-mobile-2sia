@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.tiara_distinctive.pertemuan_3_laporan.LoginActivity
-import com.example.tiara_distinctive.pertemuan_3_laporan.WelcomeActivity
+import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
+import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

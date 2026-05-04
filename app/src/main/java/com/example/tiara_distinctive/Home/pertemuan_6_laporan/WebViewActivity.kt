@@ -1,4 +1,4 @@
-package com.example.tiara_distinctive.pertemuan_6_laporan
+package com.example.tiara_distinctive.Home.pertemuan_6_laporan
 
 import android.os.Bundle
 import android.os.Message

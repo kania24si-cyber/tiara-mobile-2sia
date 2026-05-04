@@ -1,4 +1,4 @@
-package com.example.tiara_distinctive.pertemuan_4_laporan
+package com.example.tiara_distinctive.Home.pertemuan_4_laporan
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +9,14 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tiara_distinctive.R
-import com.example.tiara_distinctive.pertemuan_3_laporan.LoginActivity
-import com.example.tiara_distinctive.pertemuan_3_laporan.WelcomeActivity
+import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
 
-class Custom1Activity : AppCompatActivity() {
+class Custom2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_custom1)
+        setContentView(R.layout.activity_custom2)
 
         val judul = intent.getStringExtra("judul")
         val deskripsi = intent.getStringExtra("deskripsi")
@@ -31,18 +30,20 @@ class Custom1Activity : AppCompatActivity() {
             insets
         }
 
-        // GANTI BAGIAN INI SAJA
+        // Tambahan toolbar
+        // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
 
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
-            title = "Custom 1"
+            title = "Custom 2"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
     }
 
+    // Tombol panah kiri kembali ke WelcomeActivity
     override fun onSupportNavigateUp(): Boolean {
         startActivity(Intent(this, WelcomeActivity::class.java))
         finish()

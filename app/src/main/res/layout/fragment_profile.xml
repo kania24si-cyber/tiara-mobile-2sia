@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau_muda">
+
+    <!-- WRAPPER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hijau_primary"
+            android:title="My Profile"
+            android:titleTextColor="@color/putih_soft" />
+
+        <!-- CARD PROFILE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/putih_soft"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- FOTO -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="centerCrop"
+                android:background="@color/hijau_muda"
+                android:padding="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- NAMA -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiara Kania Noer Riska"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_primary"
+                android:gravity="center"
+                android:layout_marginBottom="4dp" />
+
+            <!-- ROLE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile dan Web Developer"
+                android:textSize="14sp"
+                android:textColor="@color/hijau_text"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ABOUT -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tentang Saya"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_text"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saya adalah mahasiswa Sistem Informasi yang memiliki minat dalam pengembangan aplikasi web dan mobile. Saya mengembangkan aplikasi DesaSface untuk membantu digitalisasi fasilitas desa agar lebih efisien dan transparan."
+                android:textColor="@color/hijau_dark"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- INFORMASI -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_text"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Universitas: Politeknik Caltex Riau\n• Program Studi: Sistem Informasi\n• Semester: 3\n• Email: tiara@email.com"
+                android:textColor="@color/hijau_dark"
+                android:textSize="14sp"
+                android:lineSpacingExtra="6dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

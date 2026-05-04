@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hijau_muda"
-    tools:context=".pertemuan_6_laporan.WebViewActivity">
+    tools:context=".Home.pertemuan_6_laporan.WebViewActivity">
 
     <!-- TOOLBAR SAJA -->
     <androidx.appcompat.widget.Toolbar

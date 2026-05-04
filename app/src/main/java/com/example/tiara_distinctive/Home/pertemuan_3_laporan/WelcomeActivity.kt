@@ -1,13 +1,15 @@
-package com.example.tiara_distinctive.pertemuan_3_laporan
+package com.example.tiara_distinctive.Home.pertemuan_3_laporan
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiara_distinctive.databinding.ActivityWelcomeBinding
-import com.example.tiara_distinctive.pertemuan_2_laporan.HitungActivity
-import com.example.tiara_distinctive.pertemuan_4_laporan.Custom1Activity
-import com.example.tiara_distinctive.pertemuan_4_laporan.Custom2Activity
-import com.example.tiara_distinctive.pertemuan_6_laporan.WebViewActivity
+import com.example.tiara_distinctive.Home.pertemuan_2_laporan.HitungActivity
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom1Activity
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
+import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
+import com.google.android.material.snackbar.Snackbar
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -94,7 +96,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.btnLogout.setOnClickListener {
 
-            androidx.appcompat.app.AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
                 .setTitle("Logout")
                 .setMessage("Yakin ingin logout?")
                 .setPositiveButton("Ya") { _, _ ->
@@ -113,11 +115,11 @@ class WelcomeActivity : AppCompatActivity() {
 
                 .setNegativeButton("Tidak") { _, _ ->
 
-                    com.google.android.material.snackbar.Snackbar
+                    Snackbar
                         .make(
                             binding.root,
                             "Logout dibatalkan",
-                            com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
+                            Snackbar.LENGTH_SHORT
                         )
                         .show()
                 }
