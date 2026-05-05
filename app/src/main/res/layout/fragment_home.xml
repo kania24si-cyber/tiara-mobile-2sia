@@ -83,7 +83,7 @@
         android:id="@+id/btnCustom1"
         android:layout_width="150dp"
         android:layout_height="110dp"
-        android:text="⭐\nCustom 1"
+        android:text="⭐\nFragment"
         android:textStyle="bold"
         android:textColor="@color/putih_soft"
         android:backgroundTint="@color/hijau_primary"
@@ -130,15 +130,15 @@
         android:id="@+id/btnLogout"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/hijau_dark"
         android:text="Logout"
         android:textColor="@color/putih_soft"
         android:textSize="14sp"
         android:textStyle="bold"
         app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        app:layout_constraintTop_toBottomOf="@id/btnCustom2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

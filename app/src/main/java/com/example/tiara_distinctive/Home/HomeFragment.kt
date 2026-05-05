@@ -8,16 +8,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import com.example.tiara_distinctive.Home.pertemuan_2_laporan.HitungActivity
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
-import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom1Activity
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
 import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
-import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -43,7 +40,7 @@ class HomeFragment : Fragment() {
             requireActivity().finish()
         }
         binding.btnCustom1.setOnClickListener {
-            val intent = Intent(requireContext(), Custom1Activity::class.java)
+            val intent = Intent(requireContext(), SeventhActivity::class.java)
             startActivity(intent)
 
         }

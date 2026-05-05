@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiara_distinctive.databinding.ActivityWelcomeBinding
 import com.example.tiara_distinctive.Home.pertemuan_2_laporan.HitungActivity
-import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom1Activity
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
 import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
 import com.google.android.material.snackbar.Snackbar
@@ -64,7 +64,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.btnCustom1.setOnClickListener {
             val intent =
-                Intent(this, Custom1Activity::class.java)
+                Intent(this, SeventhActivity::class.java)
 
             intent.putExtra("judul", "Custom 1")
             intent.putExtra(
