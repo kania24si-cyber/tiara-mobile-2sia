@@ -16,9 +16,6 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".BaseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false"/>
         <activity
             android:name=".Home.pertemuan_6_laporan.WebViewActivity"
             android:exported="false" />
