@@ -1,5 +1,6 @@
 package com.example.tiara_distinctive.Home.pertemuan_2_laporan
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
 import com.example.tiara_distinctive.R
 
 class HitungActivity : AppCompatActivity() {
@@ -76,7 +78,9 @@ class HitungActivity : AppCompatActivity() {
         }
     }
 
+    // Tombol panah kiri kembali ke WelcomeActivity
     override fun onSupportNavigateUp(): Boolean {
+        startActivity(Intent(this, WelcomeActivity::class.java))
         finish()
         return true
     }
