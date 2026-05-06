@@ -24,6 +24,8 @@ class BaseActivity : AppCompatActivity() {
             insets
 
         }
+
+
         /** FragmentHome sebagai fragment default */
         replaceFragment(HomeFragment())
 

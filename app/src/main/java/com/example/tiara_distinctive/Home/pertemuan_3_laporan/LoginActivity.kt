@@ -1,6 +1,7 @@
 package com.example.tiara_distinctive.Home.pertemuan_3_laporan
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,42 +24,108 @@ class LoginActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
 
-        val sharedPref = getSharedPreferences("session_user", MODE_PRIVATE)
+        sharedPref = getSharedPreferences("session_user", MODE_PRIVATE)
 
+        // BUTTON LOGIN
         binding.btnLogin.setOnClickListener {
 
             val username = binding.inputUsername.text.toString().trim()
             val password = binding.inputPassword.text.toString().trim()
 
-            if (username == password && username.isNotEmpty()) {
+            // reset error
+            binding.inputUsername.error = null
+            binding.inputPassword.error = null
+
+            val savedUsername = sharedPref.getString("username", "")
+            val savedPassword = sharedPref.getString("password", "")
+
+            // VALIDASI USERNAME
+            if (username.isEmpty()) {
+
+                binding.inputUsername.error = "Username wajib diisi"
+
+            }
+            // VALIDASI PASSWORD
+            else if (password.isEmpty()) {
+
+                binding.inputPassword.error = "Password wajib diisi"
+
+            }
+
+            // RULE 1
+            // username == password
+            else if (username == password) {
 
                 val editor = sharedPref.edit()
+
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
                 editor.apply()
 
-
-                val intent = Intent(this, WelcomeActivity::class.java)
+                val intent = Intent(
+                    this,
+                    WelcomeActivity::class.java
+                )
 
                 intent.putExtra("USERNAME", username)
 
                 startActivity(intent)
                 finish()
+            }
 
-            } else {
+            // RULE 2
+            // login dari SharedPreferences
+            else if (
+                username == savedUsername &&
+                password == savedPassword
+            ) {
+
+                val editor = sharedPref.edit()
+
+                editor.putBoolean("isLogin", true)
+                editor.apply()
+
+                val intent = Intent(
+                    this,
+                    WelcomeActivity::class.java
+                )
+
+                intent.putExtra("USERNAME", username)
+
+                startActivity(intent)
+                finish()
+            }
+
+            // LOGIN GAGAL
+            else {
 
                 MaterialAlertDialogBuilder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Username dan Password harus sama")
+                    .setMessage("Username atau Password salah")
                     .setPositiveButton("OK") { dialog, _ ->
                         dialog.dismiss()
                     }
                     .show()
             }
+        }
+
+        // BUTTON REGISTRASI
+        binding.buttonRegist.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                RegistrasiActivity::class.java
+            )
+
+            startActivity(intent)
         }
     }
 
