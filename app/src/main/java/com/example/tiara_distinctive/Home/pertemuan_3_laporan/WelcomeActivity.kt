@@ -33,7 +33,7 @@ class WelcomeActivity : AppCompatActivity() {
         binding.textUsername.text =
             "Halo, $username 👋"
 
-        // ✅ PAKAI TOOLBAR SAJA
+        // TOOLBAR
         setSupportActionBar(binding.toolbar)
 
         supportActionBar?.apply {
@@ -43,10 +43,7 @@ class WelcomeActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // ==========================
         // BUTTON MENU
-        // ==========================
-
         binding.btnRumus.setOnClickListener {
             val intent =
                 Intent(this, HitungActivity::class.java)

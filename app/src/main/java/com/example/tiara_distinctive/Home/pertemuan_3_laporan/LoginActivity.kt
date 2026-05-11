@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tiara_distinctive.BaseActivity
 import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.databinding.ActivityLoginBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -72,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val intent = Intent(
                     this,
-                    WelcomeActivity::class.java
+                    BaseActivity::class.java
                 )
 
                 intent.putExtra("USERNAME", username)
@@ -95,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val intent = Intent(
                     this,
-                    WelcomeActivity::class.java
+                    BaseActivity::class.java
                 )
 
                 intent.putExtra("USERNAME", username)

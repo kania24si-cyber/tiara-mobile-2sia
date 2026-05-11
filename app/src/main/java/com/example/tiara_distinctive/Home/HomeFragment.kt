@@ -34,6 +34,13 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sharedPref = requireContext().getSharedPreferences("session_user", MODE_PRIVATE)
+        // AMBIL USERNAME DARI LOGIN
+        val username = requireActivity().intent.getStringExtra("USERNAME")
+
+
+        // TAMPILKAN USERNAME
+        binding.textUsername.text = "Halo, $username 👋"
+
         binding.btnRumus.setOnClickListener {
             val intent = Intent(requireContext(), HitungActivity::class.java)
             startActivity(intent)
