@@ -91,38 +91,42 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <!-- BUTTON CUSTOM -->
+
+        <!-- BUTTON WEB -->
+
+        <!-- LOGOUT -->
         <Button
-            android:id="@+id/btnCustom2"
+            android:id="@+id/btnToNinth"
             android:layout_width="150dp"
             android:layout_height="110dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="8dp"
             android:backgroundTint="@color/hijau_primary"
-            android:text="🎨\nCustom 2"
+            android:text="🎨\nMenu"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
             app:cornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/btnRumus"
+            app:layout_constraintEnd_toStartOf="@id/btnBinaDesa"
+            app:layout_constraintHorizontal_bias="0.426"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnBinaDesa"/>
+            app:layout_constraintTop_toBottomOf="@id/btnRumus" />
 
-        <!-- BUTTON WEB -->
         <Button
             android:id="@+id/btnBinaDesa"
             android:layout_width="150dp"
             android:layout_height="110dp"
-            android:layout_marginTop="14dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="28dp"
             android:backgroundTint="@color/hijau_primary"
             android:text="🌐\nWeb Desa"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
             app:cornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/btnCustom1"
-            app:layout_constraintStart_toEndOf="@id/btnCustom2"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnToNinth"
+            app:layout_constraintTop_toBottomOf="@id/btnCustom1" />
 
-        <!-- LOGOUT -->
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="140dp"

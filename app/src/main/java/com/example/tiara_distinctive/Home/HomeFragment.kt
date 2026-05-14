@@ -13,6 +13,7 @@ import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
 import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
+import com.example.tiara_distinctive.Home.pertemuan_9_laporan.NinthActivity
 import com.example.tiara_distinctive.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -51,8 +52,8 @@ class HomeFragment : Fragment() {
             startActivity(intent)
 
         }
-        binding.btnCustom2.setOnClickListener {
-            val intent = Intent(requireContext(), Custom2Activity::class.java)
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
 
         }

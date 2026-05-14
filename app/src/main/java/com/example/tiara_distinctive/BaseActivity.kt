@@ -8,6 +8,7 @@ import com.example.tiara_distinctive.About.AboutFragment
 import com.example.tiara_distinctive.Home.HomeFragment
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
 import com.example.tiara_distinctive.Profile.ProfileFragment
+import com.example.tiara_distinctive.Settings.SettingsFragment
 import com.example.tiara_distinctive.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -65,6 +66,15 @@ class BaseActivity : AppCompatActivity() {
                     supportActionBar?.subtitle = "Data Pengguna"
 
                     replaceFragment(ProfileFragment())
+
+                    true
+                }
+                R.id.listSettings -> {
+
+                    supportActionBar?.title = "Settings"
+                    supportActionBar?.subtitle = "Menu Pengaturan"
+
+                    replaceFragment(SettingsFragment())
 
                     true
                 }

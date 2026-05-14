@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Tiaradistinctive"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Home.pertemuan_9_laporan.NinthActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.pertemuan_3_laporan.validasiActivity"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:exported="false" />
         <activity
             android:name=".BaseActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">

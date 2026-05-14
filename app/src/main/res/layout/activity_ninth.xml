@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7FA"
+    tools:context=".Home.pertemuan_9_laporan.NinthActivity">
+
+    <!-- BACKGROUND DRAWABLE -->
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TOOLBAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/hijau_primary"
+        app:title="DesaSface"
+        app:subtitle="Desa Space and Facility"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TITLE -->
+    <TextView
+        android:id="@+id/textWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Selamat Datang 👋"
+        android:textColor="@color/hijau_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:text="Sistem digital peminjaman fasilitas desa secara online dan transparan."
+        android:textColor="@color/hijau_text"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/textWelcome"
+        app:layout_constraintStart_toStartOf="@id/textWelcome"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TEXTINPUTLAYOUT EMAIL -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:hint="Masukkan Email"
+
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconScaleType="centerInside"
+        app:startIconMinSize="18dp"
+
+        app:boxBackgroundColor="@android:color/white"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- TEXTINPUTLAYOUT PASSWORD -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="14dp"
+        android:hint="Masukkan Password"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:boxBackgroundColor="@android:color/white"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- MATERIAL BUTTON -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="18dp"
+        android:text="Masuk ke DesaSface"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="@color/hijau_text"
+        app:cornerRadius="18dp"
+        app:icon="@drawable/ic_login"
+        app:iconGravity="textStart"
+        app:layout_constraintTop_toBottomOf="@id/textInputPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CHIPGROUP -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:singleSelection="true"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- CHIP -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTerbaru"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Fasilitas"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPenting"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peminjaman"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBelumDibaca"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pembayaran"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- SEARCH -->
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Cari fasilitas desa..."
+        android:padding="14dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- GRIDLAYOUT -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="12dp"
+
+        app:columnCount="3"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextText">
+
+        <!-- MENU 1 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Info Aula"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_info"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+        <!-- MENU 2 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Pinjam"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_calendar"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+        <!-- MENU 3 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Bayar"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_upload"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+        <!-- MENU 4 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Status"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_status"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+        <!-- MENU 5 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Resi"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_download"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+        <!-- MENU 6 -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_margin="3dp"
+            android:text="Petugas"
+            android:textAllCaps="false"
+            android:textSize="9sp"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="3dp"
+            app:icon="@drawable/ic_profile"
+            app:iconGravity="top"
+            app:iconPadding="4dp"
+            app:iconSize="24dp" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
