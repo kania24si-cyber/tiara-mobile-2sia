@@ -169,7 +169,6 @@
 
             app:chipCornerRadius="16dp" />
 
-        <!-- CHIP -->
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPembayaran"
             style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -184,7 +183,6 @@
 
     </com.google.android.material.chip.ChipGroup>
 
-    <!-- TITLE MENU -->
 
     <!-- GRID -->
 

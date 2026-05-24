@@ -39,7 +39,6 @@ class NinthActivity : AppCompatActivity() {
             if (selectedChipId != null) {
                 val chip = group.findViewById<Chip>(selectedChipId)
                 Toast.makeText(this, "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
-                // Lakukan logika filter di sini
             }
     }
 }

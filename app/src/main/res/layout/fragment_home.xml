@@ -59,95 +59,106 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <!-- BUTTON RUMUS -->
-
-        <!-- BUTTON FRAGMENT -->
-
-        <!-- BUTTON CUSTOM -->
-
-        <!-- BUTTON WEB -->
-
-        <!-- LOGOUT -->
-
         <Button
             android:id="@+id/btnRumus"
-            android:layout_width="150dp"
-            android:layout_height="110dp"
+            android:layout_width="130dp"
+            android:layout_height="95dp"
             android:layout_marginTop="172dp"
             android:backgroundTint="@color/hijau_primary"
             android:text="📐\nRumus"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
-
+            android:textSize="13sp"
             app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.195"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headerCard" />
+            app:layout_constraintEnd_toStartOf="@id/btnCustom1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@id/headerCard" />
 
+        <!-- BUTTON FRAGMENT -->
         <Button
             android:id="@+id/btnCustom1"
-            android:layout_width="150dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="172dp"
-            android:layout_marginEnd="40dp"
+            android:layout_width="130dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="@color/hijau_primary"
             android:text="⭐\nFragment"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
+            android:textSize="13sp"
             app:cornerRadius="12dp"
+            app:layout_constraintStart_toEndOf="@id/btnRumus"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toEndOf="@+id/btnRumus"
-            app:layout_constraintTop_toBottomOf="@+id/headerCard" />
+            app:layout_constraintTop_toTopOf="@id/btnRumus" />
 
+        <!-- BUTTON MENU -->
         <Button
             android:id="@+id/btnToNinth"
-            android:layout_width="150dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="130dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
             android:backgroundTint="@color/hijau_primary"
             android:text="🎨\nMenu"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
+            android:textSize="13sp"
             app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.195"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRumus" />
+            app:layout_constraintEnd_toStartOf="@id/btnBinaDesa"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@id/btnRumus" />
 
+        <!-- BUTTON WEB -->
         <Button
             android:id="@+id/btnBinaDesa"
-            android:layout_width="150dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
+            android:layout_width="130dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="@color/hijau_primary"
             android:text="🌐\nWeb Desa"
             android:textColor="@color/putih_soft"
             android:textStyle="bold"
+            android:textSize="13sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintStart_toEndOf="@id/btnToNinth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnToNinth" />
+
+        <!-- BUTTON BARU -->
+
+        <!-- LOGOUT -->
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="130dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/hijau_primary"
+            android:text="🖼️\nGaleri"
+            android:textColor="@color/putih_soft"
+            android:textSize="13sp"
+            android:textStyle="bold"
             app:cornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.416"
-            app:layout_constraintStart_toEndOf="@id/btnToNinth"
-            app:layout_constraintTop_toBottomOf="@id/btnCustom1" />
+            app:layout_constraintHorizontal_bias="0.252"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnToNinth" />
 
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="140dp"
             android:layout_height="48dp"
-            android:layout_marginTop="528dp"
+            android:layout_marginTop="32dp"
             android:backgroundTint="@color/hijau_dark"
             android:text="Logout"
             android:textColor="@color/putih_soft"
             android:textSize="14sp"
             android:textStyle="bold"
             app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintTop_toBottomOf="@id/btnGallery"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

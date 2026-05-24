@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Tiaradistinctive"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Home.pertemuan_10_laporan.TenthActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.pertemuan_9_laporan.NinthActivity"
             android:exported="false" />
         <activity
