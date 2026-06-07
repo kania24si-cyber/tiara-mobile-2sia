@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hijau_muda"
-    tools:context=".Home.pertemuan_10.TenthActivity">
+    tools:context=".Home.pertemuan_10_laporan.TenthActivity">
 
     <View
         android:id="@+id/background_header"

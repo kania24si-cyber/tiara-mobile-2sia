@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
+import com.example.tiara_distinctive.Tutorial.TutorialActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -56,7 +57,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 startActivity(
                     Intent(
                         this@SplashScreenActivity,
-                        LoginActivity::class.java
+                        TutorialActivity::class.java
                     )
                 )
             }
