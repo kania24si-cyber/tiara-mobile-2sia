@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tiara_distinctive.Home.news.NewsAdapter
 import com.example.tiara_distinctive.Home.pertemuan_10_laporan.TenthActivity
 import com.example.tiara_distinctive.Home.pertemuan_2_laporan.HitungActivity
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
@@ -15,8 +19,10 @@ import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
 import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
 import com.example.tiara_distinctive.Home.pertemuan_9_laporan.NinthActivity
+import com.example.tiara_distinctive.data.api.NewsApiClient
 import com.example.tiara_distinctive.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -34,6 +40,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        loadNews()
 
         val sharedPref = requireContext().getSharedPreferences("session_user", MODE_PRIVATE)
         // AMBIL USERNAME DARI LOGIN
@@ -88,5 +96,42 @@ class HomeFragment : Fragment() {
                 .show()
         }
 
+    }
+    private fun loadNews() {
+
+        lifecycleScope.launch {
+
+            try {
+
+                val news =
+                    NewsApiClient
+                        .apiService
+                        .getNews()
+
+                binding.rvNews.apply {
+
+                    layoutManager =
+                        LinearLayoutManager(
+                            requireContext()
+                        )
+
+                    adapter =
+                        NewsAdapter(news)
+                }
+
+            } catch (e: Exception) {
+
+                Toast.makeText(
+                    requireContext(),
+                    "Gagal memuat berita desa",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
