@@ -28,7 +28,6 @@ class NewsAdapter(
 
         holder.binding.tvTitle.text = item.title
 
-        // UBAH DI SINI: dari item.body menjadi item.summary
         holder.binding.tvBody.text = item.summary
     }
 

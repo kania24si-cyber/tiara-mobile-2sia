@@ -1,135 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/hijau_muda">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/putih_soft">
 
-        <!-- Nama -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nama"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Tanggal Lahir -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutTanggal"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTanggal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tanggal Lahir"
-                android:focusable="false"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Jenis Kelamin -->
-        <RadioGroup
-            android:id="@+id/radioGroupJK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
-
-            <RadioButton
-                android:id="@+id/rbLaki"
+            <!-- JUDUL -->
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Laki-Laki"/>
+                android:layout_gravity="center"
+                android:text="Registrasi DesaSface"
+                android:textColor="@color/hijau_dark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/rbPerempuan"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Perempuan"/>
-        </RadioGroup>
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="Silakan lengkapi data diri"
+                android:textColor="@color/hijau_text"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvErrorJK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark"/>
-
-        <!-- Agama -->
-        <Spinner
-            android:id="@+id/spinnerAgama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"/>
-
-        <TextView
-            android:id="@+id/tvErrorAgama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark"/>
-
-        <!-- Username -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etUsername"
+            <!-- Nama -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                app:boxStrokeColor="@color/hijau_primary">
 
-        <!-- Password -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Tanggal Lahir -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTanggal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/hijau_primary">
 
-        <!-- Confirm Password -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="Tanggal Lahir" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etConfirm"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Jenis Kelamin -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Jenis Kelamin"
+                android:textColor="@color/hijau_dark"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupJK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbLaki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/hijau_primary"
+                    android:text="Laki-Laki"
+                    android:textColor="@color/hijau_dark" />
+
+                <RadioButton
+                    android:id="@+id/rbPerempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/hijau_primary"
+                    android:text="Perempuan"
+                    android:textColor="@color/hijau_dark" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvErrorJK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <!-- Agama -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Agama"
+                android:textColor="@color/hijau_dark"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerAgama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/hijau_primary" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tvErrorAgama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark" />
 
-    </LinearLayout>
+            <!-- Username -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/hijau_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:endIconMode="password_toggle"
+                app:boxStrokeColor="@color/hijau_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Confirm Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:endIconMode="password_toggle"
+                app:boxStrokeColor="@color/hijau_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BUTTON REGISTER -->
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/hijau_primary"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textColor="@color/putih_soft"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </ScrollView>

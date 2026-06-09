@@ -24,9 +24,6 @@
             android:name=".Home.pertemuan_9_laporan.NinthActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.pertemuan_3_laporan.validasiActivity"
-            android:exported="false" />
-        <activity
             android:name=".Home.pertemuan_3_laporan.RegistrasiActivity"
             android:exported="false" />
         <activity
