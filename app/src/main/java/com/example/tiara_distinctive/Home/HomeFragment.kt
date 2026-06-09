@@ -98,32 +98,27 @@ class HomeFragment : Fragment() {
 
     }
     private fun loadNews() {
-
         lifecycleScope.launch {
-
             try {
+                // 1. Mengambil response dari API Client (berupa objek NewsResponse)
+                val response = NewsApiClient.apiService.getNews()
 
-                val news =
-                    NewsApiClient
-                        .apiService
-                        .getNews()
+                // 2. Mengekstrak properti 'results' yang berisi List<NewsModel>
+                val listBerita = response.results
 
+                // 3. Memasang data ke RecyclerView
                 binding.rvNews.apply {
-
-                    layoutManager =
-                        LinearLayoutManager(
-                            requireContext()
-                        )
-
-                    adapter =
-                        NewsAdapter(news)
+                    layoutManager = LinearLayoutManager(requireContext())
+                    adapter = NewsAdapter(listBerita)
                 }
 
             } catch (e: Exception) {
+                // Mencetak error ke Logcat untuk mempermudah pelacakan (debugging)
+                Log.e("HomeFragment", "Error loadNews: ${e.message}", e)
 
                 Toast.makeText(
                     requireContext(),
-                    "Gagal memuat berita desa",
+                    "Gagal memuat berita",
                     Toast.LENGTH_SHORT
                 ).show()
             }

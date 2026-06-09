@@ -5,18 +5,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NewsApiClient {
 
-    private const val BASE_URL =
-        "https://jsonplaceholder.typicode.com/"
+    // Pastikan berakhiran /
+    private const val BASE_URL = "https://api.spaceflightnewsapi.net/v4/articles/"
 
     val apiService: NewsApiService by lazy {
-
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(
-                GsonConverterFactory.create()
-            )
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(NewsApiService::class.java)
-
     }
 }

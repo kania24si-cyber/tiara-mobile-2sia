@@ -14,34 +14,23 @@ class NewsAdapter(
         val binding: ItemNewsBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): NewsViewHolder {
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val binding = ItemNewsBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-
         return NewsViewHolder(binding)
     }
 
-    override fun onBindViewHolder(
-        holder: NewsViewHolder,
-        position: Int
-    ) {
-
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val item = newsList[position]
 
-        holder.binding.tvTitle.text =
-            item.title
+        holder.binding.tvTitle.text = item.title
 
-        holder.binding.tvBody.text =
-            item.body
+        // UBAH DI SINI: dari item.body menjadi item.summary
+        holder.binding.tvBody.text = item.summary
     }
 
-    override fun getItemCount(): Int =
-        newsList.size
+    override fun getItemCount(): Int = newsList.size
 }
