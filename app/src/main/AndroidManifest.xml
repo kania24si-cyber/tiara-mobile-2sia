@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Tiaradistinctive"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Agenda.AgendaFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pengaduan.PengaduanFormActivity"
+            android:exported="false" />
+        <activity
             android:name=".Tutorial.TutorialActivity"
             android:exported="false" />
         <activity

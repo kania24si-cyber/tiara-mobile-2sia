@@ -19,4 +19,13 @@
         android:id="@+id/listSettings"
         android:icon="@drawable/ic_settings"
         android:title="Settings" />
+
+    <item
+        android:id="@+id/menu_pengaduan"
+        android:icon="@drawable/ic_pengaduan"
+        android:title="Pengaduan" />
+    <item
+        android:id="@+id/menu_agenda"
+        android:icon="@drawable/ic_agenda"
+        android:title="Agenda" />
 </menu>

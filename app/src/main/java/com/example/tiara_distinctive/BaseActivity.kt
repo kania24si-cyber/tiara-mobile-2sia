@@ -5,8 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tiara_distinctive.About.AboutFragment
+import com.example.tiara_distinctive.Agenda.AgendaFragment
 import com.example.tiara_distinctive.Home.HomeFragment
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
+import com.example.tiara_distinctive.Pengaduan.PengaduanFragment
 import com.example.tiara_distinctive.Profile.ProfileFragment
 import com.example.tiara_distinctive.Settings.SettingsFragment
 import com.example.tiara_distinctive.databinding.ActivityBaseBinding
@@ -76,6 +78,15 @@ class BaseActivity : AppCompatActivity() {
 
                     replaceFragment(SettingsFragment())
 
+                    true
+                }
+
+                R.id.menu_pengaduan -> {
+                    replaceFragment(PengaduanFragment())
+                    true
+                }
+                R.id.menu_agenda -> {
+                    replaceFragment(AgendaFragment())
                     true
                 }
 
