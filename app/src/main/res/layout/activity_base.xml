@@ -53,8 +53,10 @@
         android:layout_height="wrap_content"
         android:background="@color/hijau_primary"
         android:elevation="20dp"
-        app:itemIconTint="@color/putih_soft"
-        app:itemTextColor="@color/putih_soft"
+
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+
         app:labelVisibilityMode="labeled"
         app:menu="@menu/button_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
