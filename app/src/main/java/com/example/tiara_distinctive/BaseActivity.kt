@@ -12,10 +12,25 @@ import com.example.tiara_distinctive.Pengaduan.PengaduanFragment
 import com.example.tiara_distinctive.Profile.ProfileFragment
 import com.example.tiara_distinctive.Settings.SettingsFragment
 import com.example.tiara_distinctive.databinding.ActivityBaseBinding
+import android.Manifest
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import com.example.tiara_distinctive.utils.PermissionHelper
 
 class BaseActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBaseBinding
+    private val notificationPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted ->
+
+            if (isGranted) {
+                Toast.makeText(this, "Notifikasi diizinkan", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notifikasi ditolak", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +38,19 @@ class BaseActivity : AppCompatActivity() {
         // VIEW BINDING
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (PermissionHelper.isNotificationPermissionRequired()) {
+
+            val permission = Manifest.permission.POST_NOTIFICATIONS
+
+            if (!PermissionHelper.hasPermission(this, permission)) {
+
+                PermissionHelper.requestPermission(
+                    notificationPermissionLauncher,
+                    permission
+                )
+            }
+        }
 
         // TOOLBAR
         setSupportActionBar(binding.toolbar)
