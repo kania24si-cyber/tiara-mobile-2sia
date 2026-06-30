@@ -2,13 +2,9 @@ package com.example.tiara_distinctive.Agenda
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.tiara_distinctive.BaseActivity
-import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.data.AppDatabase
 import com.example.tiara_distinctive.data.entity.AgendaEntity
 import com.example.tiara_distinctive.databinding.ActivityAgendaFormBinding
@@ -45,22 +41,32 @@ class AgendaFormActivity : AppCompatActivity() {
                     // Simpan ke Room
                     db.agendaDao().insert(agenda)
 
-                    // Reminder 10 menit dari sekarang
-                    val calendar = Calendar.getInstance()
-                    calendar.add(Calendar.MINUTE, 10)
+                    // Mengambil nilai reminder berdasarkan pilihan Spinner user
+                    val reminder = when(binding.spReminder.selectedItemPosition){
+                        0 -> 5
+                        1 -> 10
+                        2 -> 15
+                        else -> 30
+                    }
 
+                    // Set calendar berdasarkan durasi menit yang dipilih
+                    val calendar = Calendar.getInstance()
+                    calendar.add(Calendar.MINUTE, reminder)
+
+                    // Set reminder dinamis
                     ReminderHelper.setReminder(
                         context = this@AgendaFormActivity,
                         hour = calendar.get(Calendar.HOUR_OF_DAY),
                         minute = calendar.get(Calendar.MINUTE),
                         title = "Agenda Desa",
-                        message = "$nama dimulai 10 menit lagi.",
-                        targetActivity = BaseActivity::class.java
+                        message = "$nama dimulai $reminder menit lagi.",
+                        targetActivity = AgendaFormActivity::class.java
                     )
 
+                    // Toast baru sesuai instruksi
                     Toast.makeText(
                         this@AgendaFormActivity,
-                        "Agenda dan Reminder berhasil disimpan",
+                        "Reminder $reminder menit berhasil dibuat",
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -68,7 +74,6 @@ class AgendaFormActivity : AppCompatActivity() {
                 }
 
             } else {
-
                 Toast.makeText(
                     this,
                     "Isi Nama Kegiatan & Lokasi!",

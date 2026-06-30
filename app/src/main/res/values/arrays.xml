@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="reminder_minutes">
+
+        <item>5 Menit</item>
+        <item>10 Menit</item>
+        <item>15 Menit</item>
+        <item>30 Menit</item>
+
+    </string-array>
+
+</resources>

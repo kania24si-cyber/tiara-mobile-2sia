@@ -66,6 +66,19 @@
                     android:hint="Lokasi Kegiatan"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminder"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+
+            <Spinner
+                android:id="@+id/spReminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/reminder_minutes"/>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
