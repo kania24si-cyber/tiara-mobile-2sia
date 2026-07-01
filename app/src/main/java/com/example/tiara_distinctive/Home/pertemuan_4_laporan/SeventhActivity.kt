@@ -11,9 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.tiara_distinctive.R
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
-import com.example.tiara_distinctive.Home.pertemuan_7.DuaFragment
-import com.example.tiara_distinctive.Home.pertemuan_7.SatuFragment
-import com.example.tiara_distinctive.Home.pertemuan_7.TigaFragment
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.DuaFragment
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SatuFragment
+import com.example.tiara_distinctive.Home.pertemuan_4_laporan.TigaFragment
 import com.example.tiara_distinctive.databinding.ActivitySeventhBinding
 import kotlin.math.abs
 

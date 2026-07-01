@@ -6,13 +6,131 @@
     android:layout_height="match_parent"
     android:background="@color/putih_soft">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Informasi Desa"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="28sp"
-        android:textColor="@color/hijau_text"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- JUDUL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ℹ️ Informasi Desa"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@color/hijau_primary"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- INFO 1: PENGUMUMAN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hijau_muda"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📢 Pengumuman Terbaru"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau_selected"
+                    android:layout_marginBottom="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Musyawarah Desa akan dilaksanakan pada tanggal 10 Juli 2025 pukul 09.00 WIB di Aula Desa."
+                    android:textColor="@color/hijau_dark"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="3dp"/>
+            </LinearLayout>
+
+            <!-- INFO 2: STATISTIK -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hijau_muda"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Statistik Desa"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau_selected"
+                    android:layout_marginBottom="6dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Jumlah KK       : 850 KK\n• Jumlah Penduduk : 3.200 jiwa\n• Laki-laki        : 1.620 jiwa\n• Perempuan        : 1.580 jiwa"
+                    android:textColor="@color/hijau_dark"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"/>
+            </LinearLayout>
+
+            <!-- INFO 3: POTENSI DESA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hijau_muda"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌱 Potensi Desa"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau_selected"
+                    android:layout_marginBottom="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pertanian padi, perkebunan kelapa sawit, budidaya ikan lele, dan kerajinan tangan anyaman rotan."
+                    android:textColor="@color/hijau_dark"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="3dp"/>
+            </LinearLayout>
+
+            <!-- INFO 4: BERITA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hijau_muda"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📰 Berita Desa"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau_selected"
+                    android:layout_marginBottom="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Program digitalisasi desa telah diluncurkan. Warga dapat mengakses layanan administrasi melalui aplikasi DesaSface kapan saja dan di mana saja."
+                    android:textColor="@color/hijau_dark"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="3dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

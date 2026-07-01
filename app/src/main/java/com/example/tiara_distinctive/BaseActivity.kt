@@ -144,4 +144,25 @@ class BaseActivity : AppCompatActivity() {
             .replace(binding.fragmentContainer.id, fragment)
             .commit()
     }
+
+    // ===== PERTEMUAN 5: OPTION MENU =====
+    override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_search -> {
+                Toast.makeText(this, "Mencari fasilitas...", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                // Berpindah ke tab Settings
+                binding.bottomNavView.selectedItemId = R.id.listSettings
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

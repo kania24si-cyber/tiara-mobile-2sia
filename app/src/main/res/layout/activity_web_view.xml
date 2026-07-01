@@ -9,7 +9,6 @@
     android:background="@color/hijau_muda"
     tools:context=".Home.pertemuan_6_laporan.WebViewActivity">
 
-    <!-- TOOLBAR SAJA -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -17,11 +16,11 @@
         android:background="@color/hijau_primary"
         app:titleTextColor="@color/putih_soft"
         app:subtitleTextColor="@color/putih_soft"
+        app:navigationIcon="@drawable/ic_arrow_back"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- WEBVIEW -->
     <WebView
         android:id="@+id/webView"
         android:layout_width="0dp"

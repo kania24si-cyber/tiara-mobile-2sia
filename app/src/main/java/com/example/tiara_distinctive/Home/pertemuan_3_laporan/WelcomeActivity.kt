@@ -136,4 +136,25 @@ class WelcomeActivity : AppCompatActivity() {
         finish()
         return true
     }
+
+    // ===== PERTEMUAN 5: OPTION MENU =====
+    override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_search -> {
+                android.widget.Toast.makeText(this, "Mencari fasilitas...", android.widget.Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                // Tampilkan snackbar atau dialog info
+                Snackbar.make(binding.root, "Gunakan Bottom Navigation di halaman utama untuk Settings", Snackbar.LENGTH_LONG).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

@@ -1,14 +1,8 @@
 package com.example.tiara_distinctive.Home.pertemuan_6_laporan
 
 import android.os.Bundle
-import android.os.Message
-import android.webkit.WebResourceError
-import android.webkit.WebResourceRequest
-import android.webkit.WebResourceResponse
-import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiara_distinctive.databinding.ActivityWebViewBinding
@@ -24,7 +18,7 @@ class WebViewActivity : AppCompatActivity() {
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//   Toolbar
+        // 🔹 Toolbar Setup
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Bina Desa"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -34,20 +28,20 @@ class WebViewActivity : AppCompatActivity() {
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.settings.domStorageEnabled = true
         binding.webView.loadUrl("https://tiara-fasilitasumum.alwaysdata.net/")
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (binding.webView.canGoBack()) {
+                    binding.webView.goBack() // Kembali ke halaman web sebelumnya jika ada
+                } else {
+                    finish()
+                }
+            }
+        })
     }
 
-    // 🔙 Back Toolbar
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true
-    }
-
-    // 🔙 Back dalam Web
-    override fun onBackPressed() {
-        if (binding.webView.canGoBack()) {
-            binding.webView.goBack()
-        } else {
-            super.onBackPressed()
-        }
     }
 }

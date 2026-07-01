@@ -22,6 +22,7 @@ import com.example.tiara_distinctive.Home.pertemuan_9_laporan.NinthActivity
 import com.example.tiara_distinctive.data.api.NewsApiClient
 import com.example.tiara_distinctive.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -116,10 +117,11 @@ class HomeFragment : Fragment() {
                 // Mencetak error ke Logcat untuk mempermudah pelacakan (debugging)
                 Log.e("HomeFragment", "Error loadNews: ${e.message}", e)
 
-                Toast.makeText(
-                    requireContext(),
+                // MENGGANTI TOAST MENJADI SNACKBAR TANPA MENGUBAH KODE LAINNYA
+                Snackbar.make(
+                    binding.root,
                     "Gagal memuat berita",
-                    Toast.LENGTH_SHORT
+                    Snackbar.LENGTH_SHORT
                 ).show()
             }
         }

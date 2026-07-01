@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -71,6 +72,13 @@ class LoginActivity : AppCompatActivity() {
                 editor.putBoolean("isLogin", true)
                 editor.apply()
 
+                // TAMBAHAN TOAST
+                Toast.makeText(
+                    this,
+                    "Login berhasil! Selamat datang $username",
+                    Toast.LENGTH_SHORT
+                ).show()
+
                 val intent = Intent(
                     this,
                     BaseActivity::class.java
@@ -93,6 +101,12 @@ class LoginActivity : AppCompatActivity() {
 
                 editor.putBoolean("isLogin", true)
                 editor.apply()
+
+                Toast.makeText(
+                    this,
+                    "Login berhasil! Selamat datang $username",
+                    Toast.LENGTH_SHORT
+                ).show()
 
                 val intent = Intent(
                     this,
