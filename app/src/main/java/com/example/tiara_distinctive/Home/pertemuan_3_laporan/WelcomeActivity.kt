@@ -10,6 +10,7 @@ import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.Custom2Activity
 import com.example.tiara_distinctive.Home.pertemuan_6_laporan.WebViewActivity
 import com.google.android.material.snackbar.Snackbar
+import com.example.tiara_distinctive.R
 
 class WelcomeActivity : AppCompatActivity() {
 

@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tiara_distinctive.R
-class TabBFragment : Fragment() {
+class
+
+TabBFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
