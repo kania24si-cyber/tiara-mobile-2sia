@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.tiara_distinctive.databinding.FragmentTabQrcodeBinding
 import com.google.zxing.BarcodeFormat
@@ -13,13 +14,15 @@ import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
 
 class TabQrcodeFragment : Fragment() {
+
     private var _binding: FragmentTabQrcodeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentTabQrcodeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,14 +32,21 @@ class TabQrcodeFragment : Fragment() {
 
         binding.btnGenerate.setOnClickListener {
             val text = binding.edtQrInput.text.toString().trim()
-            if (text.isEmpty()) return@setOnClickListener
-            binding.ivQrCode.setImageBitmap(createQR(text))
+            if (text.isEmpty()) {
+                Toast.makeText(context, "Masukkan teks terlebih dahulu", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            binding.ivQrCode.setImageBitmap(generateQrBitmap(text))
         }
     }
 
-    private fun createQR(text: String): Bitmap {
+    /**
+     * Meng-encode teks menjadi gambar Bitmap QR Code menggunakan ZXing.
+     * Ukuran default: 500x500 piksel dengan encoding UTF-8.
+     */
+    private fun generateQrBitmap(text: String): Bitmap {
         val writer = QRCodeWriter()
-        val matrix = writer.encode(
+        val bitMatrix = writer.encode(
             text,
             BarcodeFormat.QR_CODE,
             500,
@@ -46,7 +56,7 @@ class TabQrcodeFragment : Fragment() {
         return Bitmap.createBitmap(500, 500, Bitmap.Config.RGB_565).apply {
             for (x in 0 until 500) {
                 for (y in 0 until 500) {
-                    setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+                    setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
                 }
             }
         }

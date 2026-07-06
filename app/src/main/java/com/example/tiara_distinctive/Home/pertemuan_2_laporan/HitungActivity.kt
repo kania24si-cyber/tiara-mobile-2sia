@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tiara_distinctive.Home.pertemuan_3_laporan.WelcomeActivity
+import com.example.tiara_distinctive.BaseActivity
 import com.example.tiara_distinctive.R
 
 class HitungActivity : AppCompatActivity() {
@@ -78,9 +78,13 @@ class HitungActivity : AppCompatActivity() {
         }
     }
 
-    // Tombol panah kiri kembali ke WelcomeActivity
+    // Tombol panah kiri kembali ke HomeFragment di BaseActivity
     override fun onSupportNavigateUp(): Boolean {
-        startActivity(Intent(this, WelcomeActivity::class.java))
+        val intent = Intent(this, BaseActivity::class.java).apply {
+            // Bawa BaseActivity yang sudah ada ke atas, tanpa buat instance baru
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        }
+        startActivity(intent)
         finish()
         return true
     }

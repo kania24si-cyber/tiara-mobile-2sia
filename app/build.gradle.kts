@@ -65,6 +65,9 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
 
+    // CardView
+    implementation("androidx.cardview:cardview:1.0.0")
+
     // ZXing - QR Code Generator
     implementation("com.google.zxing:core:3.5.2")
 

@@ -1,31 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:background="@color/hijau_muda"
+    android:fillViewport="true">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edtQrInput"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan teks"
-        android:inputType="text" />
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGenerate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Generate" />
+        <!-- Section Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⬜ Generator QR Code"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/hijau_primary"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
 
-    <ImageView
-        android:id="@+id/ivQrCode"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        android:background="#f0f0f0"
-        android:scaleType="center" />
+        <!-- Input Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/putih_soft"
+            android:layout_marginBottom="16dp">
 
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teks atau URL untuk di-encode:"
+                    android:textSize="13sp"
+                    android:textColor="@color/hijau_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan teks / URL"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/hijau_primary"
+                    app:hintTextColor="@color/hijau_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtQrInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="3"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/hijau_dark"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Generate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGenerate"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="⚙️  Generate QR Code"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/putih_soft"
+            app:backgroundTint="@color/hijau_primary"
+            app:cornerRadius="10dp"
+            app:rippleColor="@color/hijau_dark"
+            android:layout_marginBottom="20dp" />
+
+        <!-- QR Result Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/putih_soft">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil QR Code"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau_primary"
+                    android:layout_marginBottom="12dp" />
+
+                <ImageView
+                    android:id="@+id/ivQrCode"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:background="@color/hijau_muda"
+                    android:scaleType="center"
+                    android:contentDescription="Hasil QR Code yang di-generate"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QR Code akan muncul di sini"
+                    android:textColor="@color/hijau_dark"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

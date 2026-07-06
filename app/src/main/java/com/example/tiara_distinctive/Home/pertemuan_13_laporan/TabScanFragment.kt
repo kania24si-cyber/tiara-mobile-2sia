@@ -25,31 +25,34 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class TabScanFragment : Fragment() {
+
     private var _binding: FragmentTabScanBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var cameraExecutor: ExecutorService
 
-    // Khusus hanya format QR Code
-    private var scanner: BarcodeScanner = BarcodeScanning.getClient(
+    // Scanner dikonfigurasi hanya untuk format QR Code
+    private val scanner: BarcodeScanner = BarcodeScanning.getClient(
         BarcodeScannerOptions.Builder()
             .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
             .build()
     )
 
-    // Launcher untuk izin modern
-    private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-        if (isGranted) {
-            startCamera()
-        } else {
-            Toast.makeText(context, "Izin kamera diperlukan", Toast.LENGTH_SHORT).show()
+    // Launcher modern untuk meminta izin kamera saat runtime
+    private val permissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                startCamera()
+            } else {
+                Toast.makeText(context, "Izin kamera diperlukan untuk scanning", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentTabScanBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -65,7 +68,7 @@ class TabScanFragment : Fragment() {
         }
     }
 
-    // Hapus binding & matikan scanner saat view dihancurkan untuk mencegah memory leak
+    // Bebaskan resource: binding, scanner ML Kit, dan executor thread kamera
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -80,41 +83,64 @@ class TabScanFragment : Fragment() {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * Menginisialisasi CameraX dengan dua use case:
+     * 1. [Preview] — menampilkan live feed ke PreviewView.
+     * 2. [ImageAnalysis] — mengirim frame ke ML Kit Barcode Scanner.
+     * Setiap frame diproses secara asinkron di [cameraExecutor].
+     */
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
 
+            // Use case Preview — tampilkan di PreviewView
             val preview = Preview.Builder().build().apply {
                 setSurfaceProvider(binding.previewView.surfaceProvider)
             }
 
+            // Use case ImageAnalysis — kirim frame ke scanner ML Kit
             val imageAnalyzer = ImageAnalysis.Builder()
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
                 .apply {
                     setAnalyzer(cameraExecutor) { imageProxy ->
-                        val mediaImage = imageProxy.image ?: return@setAnalyzer imageProxy.close()
-                        val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
+                        val mediaImage = imageProxy.image
+                            ?: return@setAnalyzer imageProxy.close()
+
+                        val image = InputImage.fromMediaImage(
+                            mediaImage,
+                            imageProxy.imageInfo.rotationDegrees
+                        )
 
                         scanner.process(image)
                             .addOnSuccessListener { barcodes ->
                                 if (barcodes.isNotEmpty()) {
-                                    val rawValue = barcodes[0].rawValue
+                                    val rawValue = barcodes[0].rawValue ?: return@addOnSuccessListener
                                     activity?.runOnUiThread {
-                                        binding.tvScanResult.text = "Hasil: $rawValue"
+                                        binding.tvScanResult.text = rawValue
                                     }
                                 }
                             }
-                            .addOnCompleteListener { imageProxy.close() }
+                            .addOnFailureListener { e ->
+                                Log.w("TabScan", "Gagal memproses barcode", e)
+                            }
+                            .addOnCompleteListener {
+                                imageProxy.close()
+                            }
                     }
                 }
 
             try {
                 cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, CameraSelector.DEFAULT_BACK_CAMERA, preview, imageAnalyzer)
+                cameraProvider.bindToLifecycle(
+                    viewLifecycleOwner,
+                    CameraSelector.DEFAULT_BACK_CAMERA,
+                    preview,
+                    imageAnalyzer
+                )
             } catch (e: Exception) {
-                Log.e("TabScan", "Gagal mulai kamera", e)
+                Log.e("TabScan", "Gagal memulai kamera CameraX", e)
             }
         }, ContextCompat.getMainExecutor(requireContext()))
     }
