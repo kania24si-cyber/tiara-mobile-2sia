@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tiara_distinctive.Home.news.NewsAdapter
 import com.example.tiara_distinctive.Home.pertemuan_10_laporan.TenthActivity
+import com.example.tiara_distinctive.Home.pertemuan_13_laporan.ThirteenthActivity
 import com.example.tiara_distinctive.Home.pertemuan_2_laporan.HitungActivity
 import com.example.tiara_distinctive.Home.pertemuan_3_laporan.LoginActivity
 import com.example.tiara_distinctive.Home.pertemuan_4_laporan.SeventhActivity
@@ -75,7 +76,10 @@ class HomeFragment : Fragment() {
         binding.btnGallery.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
-
+        }
+        binding.btnKamera.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
+            startActivity(intent)
         }
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
