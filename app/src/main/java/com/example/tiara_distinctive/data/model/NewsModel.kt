@@ -1,8 +1,6 @@
 package com.example.tiara_distinctive.data.model
 
 import com.google.gson.annotations.SerializedName
-
-// 1. Tambahkan class pembungkus karena JSON-nya diawali dengan objek {} bukan langsung array []
 data class NewsResponse(
     val results: List<NewsModel>
 )
